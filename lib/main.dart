@@ -2,6 +2,7 @@ import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'beta/beta.dart';
+import 'fuuga/fuuga.dart';
 import 'valli/valli.dart';
 
 void main() {
@@ -67,6 +68,8 @@ class _MyHomePageState extends State<MyHomePage> {
         page = BetaPage();
       case 3: 
         page = ValliPage();
+      case 4: 
+        page = FuugaPage();
       default:
         throw UnimplementedError('no widget for $selectedIndex');
     }
@@ -94,6 +97,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   NavigationRailDestination(
                     icon: Icon(Icons.wallpaper),
                     label: Text('Valli'),
+                  ),
+                  NavigationRailDestination(
+                    icon: Icon(Icons.cloud),
+                    label: Text('Fuuga'),
                   ),
                 ],
                 selectedIndex: selectedIndex,
