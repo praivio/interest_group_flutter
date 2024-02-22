@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'beta/beta.dart';
 import 'fuuga/fuuga.dart';
 import 'valli/valli.dart';
+import 'starba/starba.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         title: 'Namer App',
         theme: ThemeData(
           useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
         home: MyHomePage(),
       ),
@@ -66,10 +67,12 @@ class _MyHomePageState extends State<MyHomePage> {
         page = FavoritesPage();
       case 2:
         page = BetaPage();
-      case 3: 
+      case 3:
         page = ValliPage();
-      case 4: 
+      case 4:
         page = FuugaPage();
+      case 5:
+        page = StarbaPage(name: 'Name to display', location: 'Where to be at');
       default:
         throw UnimplementedError('no widget for $selectedIndex');
     }
@@ -102,6 +105,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     icon: Icon(Icons.cloud),
                     label: Text('Fuuga'),
                   ),
+                  NavigationRailDestination(
+                      icon: Icon(Icons.hotel_rounded), label: Text('starba'))
                 ],
                 selectedIndex: selectedIndex,
                 onDestinationSelected: (value) {
